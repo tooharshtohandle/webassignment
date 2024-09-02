@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="secondcss.css">
+  <link rel="stylesheet" href="fontandotherstuff.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Floating Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#top">Home</a></li>
+      <li><a href="#section1">Section 1</a></li>
+      <li><a href="#section2">Section 2</a></li>
+      <li><a href="#section3">Section 3</a></li>
+      <li><a href="#section4">Section 4</a></li>
+      <li><a href="#section5">Section 5</a></li>
+    </ul>
+  </nav>
+
+  <div class="imgs">
+    <img src="imgs/img-1.png" data-img id="img-1" class="top-section-img show">
+    <img src="imgs/img-2.png" data-img id="img-2">
+    <img src="imgs/img-3.png" data-img id="img-3">
+  </div>
+
+  <!-- Sections -->
+  <section id="top" class="top-section full-screen-section">
+    <div class="left">
+      <h1>Build Better Backends</h1>
+      <p>The only platform that gives AI the ability to autonomously build web services.</p>
+    </div>
+    <div class="right"></div>
+  </section>
+
+  <section id="section1" class="full-screen-section first-main-section">
+    <h1>Completely Visual</h1>
+    <p>Never touch the command line, from provision to production.</p>
+    <div data-img-to-show="#img-1"></div>
+  </section>
+
+  <section id="section2" class="full-screen-section">
+    <h1>Full Stack</h1>
+    <p>Never manage infrastructure again. One click gets you: a database, APIs, deployments, hosting, etc.</p>
+    <div data-img-to-show="#img-2"></div>
+  </section>
+
+  <section id="section3" class="full-screen-section">
+    <h1>Launch Faster</h1>
+    <p>Logical can get systems to market in minutes instead of weeks.</p>
+    <div data-img-to-show="#img-3"></div>
+  </section>
+
+  <section id="section4" class="full-screen-section img-fade-blur-section">
+    <h1>Innovate Quickly</h1>
+    <p>Our platform helps you innovate faster with cutting-edge tools.</p>
+    <img src="imgs/img-1.png" alt="Image 1" class="fade-blur-img" id="img-1-section4">
+  </section>
+
+  <section id="section5" class="full-screen-section img-fade-blur-section">
+    <h1>Seamless Integration</h1>
+    <p>Integrate effortlessly with a variety of services and platforms.</p>
+    <img src="imgs/img-2.png" alt="Image 2" class="fade-blur-img" id="img-2-section5">
+  </section>
+
+  <!-- Blurring Image Section -->
+  <img src="imgs/catimage.jpg" id="blurring-image" class="full-screen-section blur-in-section" alt="Blurring Image">
+
+  <!-- New Fading Sentences Section -->
+  <section class="fading-sentences-section">
+    <div class="sentence sentence-left">
+      <p>This is the first sentence, fading in from the left and ending up on the left side of the screen.</p>
+    </div>
+    <div class="sentence sentence-middle">
+      <p>This is the second sentence, fading in from the left and ending up in the middle of the screen.</p>
+    </div>
+    <div class="sentence sentence-right">
+      <p>This is the third sentence, fading in from the left and ending up on the right side of the screen.</p>
+    </div>
+  </section>
+
+  <!-- Growing Section -->
+  <section class="growing-section">
+    <div class="growing-content">
+      <h2>Growing Section Title</h2>
+      <p>This section starts small at the bottom of the screen and grows in size as you scroll down. The effect highlights the content in an engaging way, making it stand out as you continue to explore the page. As you scroll, the section expands and reveals more details about its content.</p>
+      <p>Additional text to provide more context and engagement. This section continues to grow and reveal more content as you progress down the page, making it more dynamic and interactive.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact-form-section" id="contact-form">
+    <div class="contact-form-content">
+      <div class="contact-form-text">
+        <h2>Contact Us</h2>
+        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+      </div>
+      <div class="contact-form">
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fading and Blurring Text Section -->
+  <section id="fading-blur-section" class="fading-blur-section">
+    <div class="fading-blur-content">
+      <h2>Fading and Blurring Text</h2>
+      <p>This text will fade in from below and blur into focus as you scroll down.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <p>© 2024 Your Company. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <div class="contact-info">
+          <h2>Contact Info</h2>
+          <p>Email: contact@example.com</p>
+          <p>Phone: +1234567890</p>
+        </div>
+        <div class="social-media">
+          <h2>Social Media</h2>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="policy">
+          <h2>Policy</h2>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,233 @@
+/* Global Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #141616;
+  background-color: #e6e9ea;
+  font-size: 28px;
+  background-image: url('imgs/backgroundimage.jpeg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-size: 110px;
+  margin-bottom: 1rem;
+}
+
+/* Section Styles */
+.full-screen-section {
+  height: 100vh;
+  text-align: center;
+  padding: calc(1rem + 60px);
+  position: relative;
+}
+
+.top-section {
+  display: flex;
+  text-align: start;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  translate: 0 calc(-1% * (max(var(--scroll), 25) - 25) * 100 / 75);
+  --background-opacity: calc(100% - 1% * min(var(--scroll), 30) * 100 / 30);
+}
+
+.top-section .left,
+.top-section .right {
+  flex-basis: 0;
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.top-section .left {
+  padding-left: 3rem;
+  background-color: rgba(248, 250, 249, var(--background-opacity));
+}
+
+.top-section .right {
+  background: linear-gradient(210.65deg, rgba(152, 157, 157, var(--background-opacity)) 0%, rgba(189, 194, 194, var(--background-opacity)) 100%);
+}
+
+.imgs > .top-section-img {
+  --value: min(var(--scroll), 30) * 50 / 30;
+  width: calc(50vw + 1vw * var(--value));
+}
+
+@media (max-width: 1000px) {
+  .top-section .right {
+    display: none;
+  }
+
+  .top-section .left {
+    text-align: center;
+  }
+
+  body {
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: 72px;
+  }
+
+  .imgs > .top-section-img {
+    width: 100vw;
+  }
+}
+
+:root {
+  --scroll: 0;
+}
+
+.first-main-section {
+  padding-top: 10vh;
+}
+
+.imgs > * {
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  z-index: 10;
+  translate: 0 100%;
+  transform: scale(0.5);
+  transition: transform 1s ease-in-out, translate 1s ease-in-out;
+}
+
+.imgs > .show {
+  translate: 0 0;
+  transform-origin: bottom center;
+  transition: transform 1s ease-in-out, translate 1s ease-in-out;
+}
+
+[data-img-to-show] {
+  position: absolute;
+  top: 20%;
+}
+
+/* Fading Text Section */
+.fading-text-section,
+.fading-sentences-section,
+.fading-blur-section {
+  background-color: #e6e9ea;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.fading-text-section {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fading-text-section.fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Blurring Effect for Sections */
+.blur-in-section,
+#blurring-image,
+.fading-blur-content {
+  opacity: 0;
+  transition: filter 2s ease, opacity 2s ease;
+}
+
+.blur-in-section {
+  filter: blur(10px);
+}
+
+.blur-in-section.in-focus,
+#blurring-image.in-focus,
+.fading-blur-section.fade-in .fading-blur-content {
+  filter: blur(0);
+  opacity: 1;
+}
+
+#blurring-image {
+  display: block;
+  margin: 0 auto;
+  border-radius: 100px;
+  max-width: 100%;
+  height: auto;
+  filter: blur(10px);
+  transition: filter 2s ease-out, opacity 2s ease-out;
+}
+
+/* Fading Sentences Section */
+.sentence {
+  opacity: 0;
+  transform: translateX(-50px);
+  margin: 5rem 0;
+}
+
+.sentence-left {
+  text-align: left;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.sentence-middle {
+  text-align: center;
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.sentence-right {
+  text-align: right;
+  transition: opacity 2.5s ease-out, transform 2.5s ease-out;
+}
+
+.sentence.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fading and Blurring Text Section */
+.fading-blur-section {
+  padding: 3rem 1rem;
+}
+
+.fading-blur-content {
+  transform: translateY(50px);
+  filter: blur(10px);
+  transition: opacity 1s ease-out, transform 1s ease-out, filter 1s ease-out;
+}
+
+#section4,
+#section5 {
+  background-color: #e6e9ea;
+}
+
+#section5 {
+    padding: 6rem 0; /* Increase the padding to make it taller */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Image Fade and Blur Effect */
+.img-fade-blur-section {
+    position: relative;
+    overflow: hidden; /* Ensure images do not spill out of the section */
+}
+
+.fade-blur-img {
+    position: absolute;
+    bottom: -50px; /* Start slightly out of view */
+    left: 50%;
+    transform: translateX(-50%) scale(1.1); /* Slightly larger for the initial blur */
+    opacity: 0;
+    filter: blur(15px);
+    transition: opacity 2s ease-out, transform 2s ease-out, filter 2s ease-out;
+}
+
+.img-fade-blur-section.in-view .fade-blur-img {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(-50%) scale(1);
+    bottom: 0;
+}
